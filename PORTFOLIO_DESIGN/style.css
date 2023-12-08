@@ -429,6 +429,7 @@ header.sticky{
       
       .contact-details {
         max-width: 400px;
+      }
       
       .contact-details h2 {
         font-size: 2rem;
@@ -451,15 +452,16 @@ header.sticky{
       }
       
       /* Add media query for smaller screens if necessary */
-      @media only screen and (max-width: 1000px) {
+      @media only screen and (max-width: 300px) {
         .contact-container {
           flex-direction: column;
         }
-      }
+        }
+      
       
 
 /* Add a media query for screens smaller than 768px */
-@media only screen and (max-width: 1000px) {
+@media screen and (min-width: 300px) and (max-width: 1000px){
     body {
         font-size: 14px;
     }
@@ -485,24 +487,27 @@ header.sticky{
         align-items: center;
         text-align: right;
         position: absolute;
-        top: 60px;
-        right: 0;
-        width: 30%;
+        top: 70px;
+        right: 7px;
+        width: 60%;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         background: rgba(235, 119, 182, 0.384); 
         backdrop-filter: blur(2px);
         height: 50vh;
         line-height: 10vh;
-        border-radius: 3px;
+        border-radius: 17px;
+        
 
 }
  
     .navbar a {
         margin: 10px 0;
+        font-size: 20px;
+        color: #b61764;
     }
 
     .navbar a:hover{
-        color: var(--main-color);
+        color: var(--other-color);
     }
     #menu-icon {
         display: block;
@@ -522,13 +527,13 @@ header.sticky{
     }
 
     .btn button {
-        font-size: 1.2rem;
+        font-size: .4rem;
     }
 
     section {
-        padding: 60px 5%;
+        padding: 60px 9%;
     }
-
+    
     .about img {
         width: 100%;
     }
@@ -539,7 +544,7 @@ header.sticky{
     }
 
     .services{
-        height: 180vh;
+        height: 200vh;
     }
     .services h1 {
         padding-top: 20%;
@@ -577,7 +582,6 @@ header.sticky{
     }
 
 }
-
 /* Show desktop navbar when screen is wider than 768px */
 @media only screen and (min-width: 1000px) {
    
@@ -587,4 +591,3 @@ header.sticky{
   
    
 }
-      }
