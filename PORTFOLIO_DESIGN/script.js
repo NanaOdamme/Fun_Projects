@@ -28,32 +28,6 @@ const filterCards = (e) => {
 filterBtns.forEach(button => button.addEventListener("click", filterCards));
 
 
-
-document.addEventListener('DOMContentLoaded', function () {
-    const menuIcon = document.getElementById('menu-icon');
-    const mobileNavbar = document.querySelector('.navbar');
-
-    menuIcon.addEventListener('click', function () {
-        mobileNavbar.style.display = mobileNavbar.style.display === 'flex' ? 'none' : 'flex';
-    });
-
-    // Close mobile navbar when a link is clicked
-    const mobileNavLinks = document.querySelectorAll('.navbar a');
-    mobileNavLinks.forEach(link => {
-          link.addEventListener('click', function () {
-            mobileNavbar.style.display = 'none';
-        });
-    });
-
-    // Close mobile navbar when clicking outside of it
-    document.addEventListener('click', function (event) {
-        if (!event.target.matches('#menu-icon') && !event.target.closest('.navbar')) {
-            mobileNavbar.style.display = 'none';
-        }
-    });
-});
-
-
 // Get the modal and its components
 const modal = document.getElementById('myModal');
 const modalImage = document.getElementById('modalImage');
@@ -108,3 +82,21 @@ filterableCards.forEach(card => {
     openImageInNewWindow(imageUrl);
   });
 });
+
+//show and hide navlinks in responsive mode
+document.addEventListener("DOMContentLoaded", function () {
+  const menuIcon = document.getElementById("menu-icon");
+  const navbar = document.querySelector(".navbar");
+
+  menuIcon.addEventListener("click", function () {
+    navbar.classList.toggle("show-links");
+  });
+
+  // Close the navigation links when clicking outside of them
+  document.body.addEventListener("click", function (event) {
+    if (!navbar.contains(event.target) && !menuIcon.contains(event.target)) {
+      navbar.classList.remove("show-links");
+    }
+  });
+});
+

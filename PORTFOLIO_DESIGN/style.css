@@ -395,9 +395,11 @@ header.sticky{
     color: var(--h2-font);
 }
 
-
+.show-links {
+    display: flex !important;
+  }
 /* Add a media query for screens smaller than 768px */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
     body {
         font-size: 14px; /* Adjust the font size for smaller screens */
     }
@@ -411,20 +413,26 @@ header.sticky{
     }
 
    /* Add styles for  navigation */
-.navbar {
+
+   .show-links {
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: right;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 30%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background: rgba(235, 119, 182, 0.384); 
-    backdrop-filter: blur(2px);
-    height: 50vh;
-    line-height: 10vh;
-    border-radius: 3px;
+  }
+    .navbar {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: right;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 30%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background: rgba(235, 119, 182, 0.384); 
+        backdrop-filter: blur(2px);
+        height: 50vh;
+        line-height: 10vh;
+        border-radius: 3px;
 
 }
  
@@ -506,27 +514,15 @@ header.sticky{
         padding: 8px 15px;
         font-size: 14px;
     }
+
 }
-
-
-
-/* Hide desktop navbar by default 
-.navbar {
-    display: none;
-}
-*/
 
 /* Show desktop navbar when screen is wider than 768px */
-@media only screen and (min-width: 600px) {
-    .navbar {
-        display: flex;
-    }
-
+@media only screen and (min-width: 1000px) {
+   
     #menu-icon {
         display: none;
     }
-
-    .navbar {
-        display: none;
-    }
+  
+   
 }
