@@ -58,6 +58,12 @@ header{
 
 }
 
+
+
+#menu-icon {
+    display: block;
+}
+
 .navbar a{
     color: var(--second-bg-color);
     font-size: 1.3rem;
@@ -387,4 +393,140 @@ header.sticky{
     font-size: 20px;
     font-weight: 500;
     color: var(--h2-font);
+}
+
+
+/* Add a media query for screens smaller than 768px */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px; /* Adjust the font size for smaller screens */
+    }
+
+    header {
+        height: 10%;
+    }
+
+    .home img{
+        display: none;
+    }
+
+   /* Add styles for  navigation */
+.navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: right;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 30%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: rgba(235, 119, 182, 0.384); 
+    backdrop-filter: blur(2px);
+    height: 50vh;
+    line-height: 10vh;
+    border-radius: 3px;
+
+}
+ 
+    .navbar a {
+        margin: 10px 0;
+    }
+
+    .navbar a:hover{
+        color: var(--main-color);
+    }
+    #menu-icon {
+        display: block;
+        color: #b61764;
+    }
+
+    .home img {
+        width: 100%;
+    }
+
+    .h-text h1 {
+        font-size: 4rem;
+    }
+
+    .h-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .btn button {
+        font-size: 1.2rem;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
+
+    .about img {
+        width: 100%;
+    }
+
+    .btnn {
+        margin-top: 30px;
+        font-size: 1rem;
+    }
+
+    .services{
+        height: 180vh;
+    }
+    .services h1 {
+        padding-top: 20%;
+    }
+
+    .serve {
+        padding: 15px 5px;
+    }
+
+    .all-cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 15px;
+    }
+
+    .card img {
+        height: 150px;
+    }
+
+    .card-body {
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .gallery-h1 {
+        font-size: 1.5rem;
+        padding-top: 5%;
+    }
+
+    #filter {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+
+
+/* Hide desktop navbar by default 
+.navbar {
+    display: none;
+}
+*/
+
+/* Show desktop navbar when screen is wider than 768px */
+@media only screen and (min-width: 600px) {
+    .navbar {
+        display: flex;
+    }
+
+    #menu-icon {
+        display: none;
+    }
+
+    .navbar {
+        display: none;
+    }
 }
