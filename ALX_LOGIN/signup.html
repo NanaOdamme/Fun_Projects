@@ -1,0 +1,182 @@
+<!-- signup.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>alx-Signup Form clone static</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fffdfd;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .logo{
+        text-align: center;
+        margin-bottom: 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+          font-size: 3rem;
+      }
+
+    .signup-container {
+      text-align: center;
+      height: 75%;
+      width: 40%; /* Adjust the width as needed */
+      max-width: 400px;
+      background-color: rgb(241, 251, 252);
+      padding: 45px;
+      margin-bottom: 50px;
+      border-radius: 8px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .signup-container input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 2px solid #020202; /* Blue color */
+        border-radius: 8px;
+        background-color: transparent;
+    }
+
+    .signup-container label {
+      display: block;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .signup-container .remember-me {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+
+    .signup-container .remember-me input {
+      margin-right: 8px;
+      width: auto;
+      transform: scale(1.5);
+      align-self: center;
+    }
+
+    .signup-container .remember-me p {
+      font-weight: bold;
+      margin-top: 3px;
+    }
+
+    .signup-button {
+      display: inline;
+      background-color: #db3b3b;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 25%;
+      font-size: 1.2rem;
+      margin-bottom: 50px;
+    }
+
+    .login{
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 50px;
+      }
+  
+      .login a {
+        color: #e73c47;
+        text-decoration: none;
+      }
+
+      @media (width: 600px) {
+        .signup-container {
+          width: 50%;
+          
+        }
+        
+        .signup-button {
+          width: 50%;
+        }
+
+        .logo{
+            text-align: center;
+            margin-bottom: 5px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+              font-size: 2rem;
+          }
+
+          .signup-button{
+            margin-bottom: 10px;
+          }
+      }
+      @media (max-width: 1024px) {
+        .signup-container {
+          width: 90%;
+          
+        }
+        
+        .signup-button {
+          width: 70%;
+        }
+
+        .logo{
+            text-align: center;
+            margin-bottom: 5px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+              font-size: 2rem;
+          }
+
+          .signup-button{
+            margin-bottom: 10px;
+          }
+          .remember-me{
+            font-size: 0.8rem;
+          }
+          label{
+            font-size: 0.9rem;
+          }
+      }
+  </style>
+</head>
+<body>
+  <div class="signup-container">
+    <div class="logo"><h1 class="logo">alx</h1></div>
+    <form>
+      <label for="signupEmail">Email</label>
+      <input type="email" id="signupEmail" name="signupEmail" required>
+
+      <label for="signupPassword">Password</label>
+      <input type="password" id="signupPassword" name="signupPassword" required>
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+      <div class="remember-me">
+        <input type="checkbox" id="agreeTerms" name="agreeTerms">
+        <p>Agree to terms and conditions</p>
+      </div>
+
+      <div>
+        <button type="submit" class="signup-button">Sign Up</button>
+      </div>
+
+      <div class="login">
+        <p>already a member?</p>
+        <a href="login.html">Log in here</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
