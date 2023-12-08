@@ -398,6 +398,67 @@ header.sticky{
 .show-links {
     display: flex !important;
   }
+
+
+
+
+
+    /* Add styles for the new contact section */
+    .contact {
+        background-color: #000;
+        color: #fff;
+        padding: 80px 0;
+        text-align: center;
+        height: auto;
+      }
+      
+      .contact-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        max-width: 1200px;
+        margin: 2px;
+      }
+      
+      .contact img {
+        height: auto;
+        width: 300px; /* Adjust the width as needed */
+        margin-left: 2px;
+
+      }
+      
+      .contact-details {
+        max-width: 400px; /* Adjust the width as needed */
+      }
+      
+      .contact-details h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      
+      .contact-details p {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+      
+      .social-icons {
+        margin-top: 20px;
+      }
+      
+      .social-icons a {
+        color: #fff;
+        font-size: 1.5rem;
+        margin-right: 10px;
+      }
+      
+      /* Add media query for smaller screens if necessary */
+      @media only screen and (max-width: 1000px) {
+        .contact-container {
+          flex-direction: column;
+        }
+      }
+      
+
 /* Add a media query for screens smaller than 768px */
 @media only screen and (max-width: 1000px) {
     body {
@@ -411,6 +472,7 @@ header.sticky{
     .home img{
         display: none;
     }
+
 
    /* Add styles for  navigation */
 

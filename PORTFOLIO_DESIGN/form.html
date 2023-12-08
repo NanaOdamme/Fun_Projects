@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Form</title>
+
+    <!-- Styles -->
+    <style>
+        /* Add styles for the message form */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        .message-form {
+            background-color: #f8d8e8; /* Adjust the background color as needed */
+            padding: 50px;
+            text-align: center;
+        }
+
+        .form-container {
+            max-width: 600px; /* Adjust the width as needed */
+            margin: 0 auto;
+        }
+
+        .message-form h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #ff3da5; /* Adjust the button color as needed */
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            width: 50%;
+            margin-bottom: 50px;
+        }
+
+        button:hover {
+            background-color: #a12762; /* Adjust the hover color as needed */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Message Form Section -->
+    <section class="message-form">
+        <div class="form-container">
+            <h2>Message Me</h2>
+            <form id="contactForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="button" onclick="submitForm()">Submit</button>
+                <button type="button" onclick="goBack()">Back</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Script for Form Submission -->
+    <script>
+        function submitForm() {
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+    
+            
+            console.log("Email:", email);
+            console.log("Message:", message);
+    
+            // Clear the form after submission
+            document.getElementById("contactForm").reset();
+    
+            // Redirect to the homepage with a message
+            window.location.href = 'index.html?message=sent';
+        }
+
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+    </script>
+    
+</body>
+</html>
