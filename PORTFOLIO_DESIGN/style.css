@@ -399,57 +399,9 @@ header.sticky{
     display: flex !important;
   }
 
-
-
-
-
     /* Add styles for the new contact section */
-    .contact {
-        background-color: #000;
-        color: #fff;
-        padding: 80px 0;
-        text-align: center;
-        height: auto;
-      }
-      
-      .contact-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        max-width: 1200px;
-        margin: 2px;
-      }
-      
-      .contact img {
-        height: auto;
-        width: 300px;
-        margin-left: 2px;
 
-      }
       
-      .contact-details {
-        max-width: 400px;
-      }
-      
-      .contact-details h2 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-      }
-      
-      .contact-details p {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
-      }
-      
-      .social-icons {
-        margin-top: 20px;
-      }
-      
-      .social-icons a {
-        color: #fff;
-        font-size: 1.5rem;
-        margin-right: 10px;
-      }
       
       /* Add media query for smaller screens if necessary */
       @media only screen and (max-width: 300px) {
@@ -590,4 +542,80 @@ header.sticky{
     }
   
    
+}
+
+footer{
+    background: #ffffffb9;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: 100vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-top: 2px solid #c5b823;
+    padding-top: 40px;
+
+}
+.f-contents{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.f-contents h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+.f-contents p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14-x;
+
+}
+.social-icons{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 1rem 0 3rem 0;
+}
+
+.social-icons li{
+    margin: 0 10px;
+}
+
+.social-icons a{
+    text-decoration: none;
+    color: #ff2bae;
+}
+.social-icons a i{
+    font-size: 1.6rem;
+}
+
+.social-icons a:hover i{
+    color: #f6eb75;
+    transform: scale(1.3);
+    transition: transform 0.4s ease;
+}
+.footer-bottom{
+    background: var(--other-color);
+    width:100vw;
+    padding: 20px 0;
+    text-align: center;
+
+}
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.footer-bottom span{
+    text-transform: capitalize;
+    opacity: .6;
+    font-weight: 200; 
 }
