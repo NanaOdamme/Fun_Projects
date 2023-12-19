@@ -10,12 +10,12 @@
 }
 
 :root{
-    --bg-color : rgb(240, 240, 244);
-    --second-bg-color: #40424b;
-    --main-color: #ff3da5;
-    --text-color: #000000;
-    --second-color:#f8d8e8;
-    --other-color: #f6eb75;
+    --bg-color : rgb(233, 234, 213);
+    --second-bg-color: #d6ba5d;
+    --main-color: #ff943d;
+    --text-color: #05353d;
+    --second-color:#1c555b;
+    --other-color: #f8d197;
     
     --h1-font: 7rem;
     --h2-font: 3.5rem;
@@ -45,9 +45,16 @@ header{
     border-bottom: 1px solid transparent;
 }
 
-.logo img {
+.logo{
     height: auto;
-    width: 150px;
+    width: 195px;
+    color: var(--main-color);
+    background-color: #1c555b;
+    padding: 5px;
+    border-radius: 20px;
+}
+.logo span{
+    color: var(--second-bg-color);
 }
 
 .navbar{
@@ -139,7 +146,7 @@ header{
 }
 
 .h-text h3{
-    color: #b61764;
+    color: var(--main-color);
     font-size: 1.7rem;
     font-weight: 600;
     margin-top: 70px;
@@ -157,12 +164,13 @@ header{
 }
 
 .text-h2{
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 600;
-    margin-bottom: 50px;
+    margin-bottom: 5px;
     letter-spacing: 3px;
     display: inline-block;
     animation: bounceAndGlow 1.5s infinite;
+    color: var(--text-color);
 }
 /* animation effect on text */
 @keyframes bounceAndGlow {
@@ -202,7 +210,7 @@ header{
     margin-top: 50px;
     display: inline-block;
     padding: 16px 45px;
-    background: #b61764; 
+    background: var(--text-color); 
     color: white;
     font-size: var(--p-font);
     font-weight: 700;
@@ -221,6 +229,9 @@ header{
     width: 60%;
     position: relative;
     transition: transform 0.5s, background 0.5s;
+    border-radius: 100%;
+    border: 5px solid var(--text-color);
+
 }
 .about img:hover{
     transform: scale(1.3);
@@ -229,36 +240,37 @@ header{
 
 header.sticky{
     padding: 15px 11%;
-    background: #000;
+    background: var(--text-color);
     border-bottom: 2px solid #4e5055;
 
 
 }
 .about{
-    background:#fff;
+    background:var(--other-color);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, auto));
     align-items: center;
     gap: 4rem;
 }
 .services{
-    background-color: #fff;
+    background-color: var(--second-color);
     width: 100%;
     height: 100vh;
     padding: auto;
 }
 
 .services h1{
-    color: #000;
+    color: var(--main-color);
     text-align: center;
     padding-top: 10%;
     margin-bottom: 60px;
     font-weight: 600;
     position: relative;
+    font-size: 2.5rem;
 }
 .services h1::after{
     content: '';
-    background: var(--other-color);
+    background: var(--second-bg-color);
     width: 100px;
     height: 5px;
     position: absolute;
@@ -290,16 +302,16 @@ header.sticky{
 }
 
 .serve p{
-    color: #000;
+    color: #ffffff;
 }
 
 .serve h2{
-    color: #000;
+    color: #ffffff;
     font-weight: 600;
     margin-bottom: 8px;
 }
 .serve:hover{
-    background: var(--other-color);
+    background: var(--main-color);
     color: var(--second-bg-color);
     transform: scale(1.05);
 }
@@ -326,7 +338,7 @@ header.sticky{
 
 .gallery-h1::after{
     content: '';
-    background: var(--main-color);
+    background: var(--other-color);
     width: 100px;
     height: 5px;
     position: absolute;
@@ -337,7 +349,7 @@ header.sticky{
 #filter{
     padding: 10px 20px;
     font-size: 18px;
-    background: var(--second-color);
+    background: var(--main-color);
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -351,9 +363,13 @@ header.sticky{
    gap: 10px;
    flex-wrap: wrap;
 }
-
+#filter:hover{
+    background-color: #ff943d;
+    transform: scale(1.1);
+    transition: transform 0.4s ease;
+}
 #filter.active{
-    background: var(--main-color);
+    background: var(--second-color);
     color:rgb(240, 240, 244)
 
 }
@@ -375,9 +391,15 @@ header.sticky{
 }
 .card{
     flex-basis: 300px;
-    background-color: #fff;
+    background-color:var(--other-color);
     padding: 3px;
     border-radius: 8px 8px;
+    cursor: pointer;
+}
+.card:hover{
+    background-color: #ff943d;
+    transform: scale(1.2);
+    transition: transform 0.4s ease;
 }
 .card img{
     width: 100%;
@@ -422,10 +444,23 @@ header.sticky{
         height: 10%;
     }
 
+    #menu-icon:hover{
+            transform: scale(1.4);
+            transition: transform 0.4s ease;
+            color: #f6eb75;
+    }
+
     .home img{
         display: none;
     }
-
+    .logo{
+        height: auto;
+        width: 180px;
+        color: var(--main-color);
+        background-color: #1c555b;
+        padding: 5px;
+        border-radius: 20px;
+    }
 
    /*navigation */
 
@@ -442,8 +477,8 @@ header.sticky{
         top: 70px;
         right: 7px;
         width: 60%;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        background: rgba(235, 119, 182, 0.384); 
+        box-shadow: 0 2px 5px rgba(94, 72, 48, 0.1);
+        background: #ff943d89; 
         backdrop-filter: blur(2px);
         height: 50vh;
         line-height: 10vh;
@@ -455,15 +490,15 @@ header.sticky{
     .navbar a {
         margin: 10px 0;
         font-size: 20px;
-        color: #b61764;
+        color: var(--text-color);
     }
 
     .navbar a:hover{
-        color: var(--other-color);
+        color: var(--main-color);
     }
     #menu-icon {
         display: block;
-        color: #b61764;
+        color: var(--main-color);
     }
 
     .home img {
@@ -545,14 +580,14 @@ header.sticky{
 }
 
 footer{
-    background: #ffffffb9;
+    background: var(--text-color);
     position: absolute;
     left: 0;
     right: 0;
     height: auto;
     width: 100vw;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border-top: 2px solid #c5b823;
+    border-top: 2px solid var(--main-color);
     padding-top: 40px;
 
 }
@@ -590,7 +625,7 @@ footer{
 
 .social-icons a{
     text-decoration: none;
-    color: #ff2bae;
+    color: var(--main-color);
 }
 .social-icons a i{
     font-size: 1.6rem;
@@ -602,7 +637,7 @@ footer{
     transition: transform 0.4s ease;
 }
 .footer-bottom{
-    background: var(--other-color);
+    background: var(--main-color);
     width:100vw;
     padding: 20px 0;
     text-align: center;
