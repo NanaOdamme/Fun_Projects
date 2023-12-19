@@ -603,6 +603,7 @@ footer{
     font-weight: 400;
     text-transform: capitalize;
     line-height: 3rem;
+    color: var(--main-color);
 }
 
 .f-contents p{
@@ -610,6 +611,7 @@ footer{
     margin: 10px auto;
     line-height: 28px;
     font-size: 14-x;
+    color: var(--main-color);
 
 }
 .social-icons{

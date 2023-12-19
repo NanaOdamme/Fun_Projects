@@ -31,7 +31,7 @@ filterBtns.forEach(button => button.addEventListener("click", filterCards));
 // Get the modal and its components
 const modal = document.getElementById('myModal');
 const modalImage = document.getElementById('modalImage');
-const closeBtn = document.querySelector('.close');
+//const closeBtn = document.querySelector('.close');
 
 // Function to open the modal with a specific image
 const openModal = (imageUrl) => {
@@ -53,7 +53,7 @@ filterableCards.forEach(card => {
 });*/
 
 // Event listener to close the modal when the close button is clicked
-closeBtn.addEventListener('click', closeModal);
+//closeBtn.addEventListener('click', closeModal);
 
 // Event listener to close the modal when clicking outside of it
 window.addEventListener('click', function (event) {
