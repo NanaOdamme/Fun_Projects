@@ -88,11 +88,11 @@
         }
 
         /* Media query for 300px width */
-        @media screen and (max-width: 300px) {
+        @media screen and (min-width: 200px) and (max-width: 1000px) {
             body{
                 padding: 0;
                 background-repeat: no-repeat;
-                background-size: cover;
+                background-size: 100rem;
                 background-position: center;
             }
             
@@ -102,6 +102,7 @@
             }
             .message-form{
                 margin: 0;
+                padding: 40px;
             }
             .message-form h2{
                 font-size: 1.5rem;

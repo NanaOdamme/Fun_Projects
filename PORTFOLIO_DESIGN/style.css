@@ -435,7 +435,7 @@ header.sticky{
       
 
 /* Add a media query for screens smaller than 768px */
-@media screen and (min-width: 300px) and (max-width: 1000px){
+@media screen and (min-width: 200px) and (max-width: 1000px){
     body {
         font-size: 14px;
     }
@@ -455,11 +455,12 @@ header.sticky{
     }
     .logo{
         height: auto;
-        width: 180px;
+        width: 135px;
         color: var(--main-color);
         background-color: #1c555b;
         padding: 5px;
         border-radius: 20px;
+        font-size: 1rem;
     }
 
    /*navigation */
@@ -532,6 +533,7 @@ header.sticky{
 
     .services{
         height: 200vh;
+        
     }
     .services h1 {
         padding-top: 20%;
