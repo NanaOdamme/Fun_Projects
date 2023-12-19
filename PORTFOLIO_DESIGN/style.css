@@ -84,12 +84,14 @@ header{
 
 .navbar a:hover{
     color: var(--main-color);
+    transform: scale(2);
+    transition: transform 0.4s ease;
 
 }
 
-.navbar a.active{
+/*.navbar a.active{
     color: var(--main-color);
-}
+}*/
 
 #menu-icon{
     font-size: 40px;
@@ -496,6 +498,8 @@ header.sticky{
 
     .navbar a:hover{
         color: var(--main-color);
+        transform: scale(2);
+        transition: transform 0.4s ease;
     }
     #menu-icon {
         display: block;
