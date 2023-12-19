@@ -477,11 +477,11 @@ header.sticky{
         position: absolute;
         top: 70px;
         right: 7px;
-        width: 60%;
+        width: 50%;
         box-shadow: 0 2px 5px rgba(94, 72, 48, 0.1);
         background: #ff943d89; 
         backdrop-filter: blur(2px);
-        height: 50vh;
+        height: 30vh;
         line-height: 10vh;
         border-radius: 17px;
         
