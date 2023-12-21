@@ -142,7 +142,7 @@
       }
     }
 
-    #see{
+    i{
        /* display: inline-block;*/
         color: rgb(171, 171, 171);
         float: right;
@@ -150,6 +150,7 @@
         cursor: pointer;
         transition-duration: .2s;
         font-size: 12px;
+        margin-top: -30px;
     }
 
   </style>
@@ -157,34 +158,88 @@
 <body>
 <div class="login-container">
     <div><h1 class="logo">Sign Up</h1></div>
-  <form>
-    <input type="text" id="username" name="username" placeholder="Username..." required>
+    <form>
+        <input type="text" id="username" name="username" placeholder="Username..." required>
+        
+        <input type="email" id="email" name="email" placeholder="Email...">
+        
+        <div class="password-container">
+            <input type="password" id="password" name="password" placeholder="Password..." required>
+            <i id="see-password" onclick="togglePasswordVisibility('password')" class="fa fa-eye"></i>
+        </div>
+        
+        <div class="password-container">
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password..." required>
+            <i id="see-confirm-password" onclick="togglePasswordVisibility('confirmPassword')" class="fa fa-eye"></i>
+        </div>
+        
+        <div class="remember-me">
+            <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
+            <p class="terms">I agree to the terms and conditions.</p>
+        </div>
+        
+        <div>
+            <button type="submit" class="login-button" onclick="registerUser()">Sign Up</button>
+        </div>
+    </form>
     
-    <input type="email" id="email" name="email" placeholder="Email...">
-    
-    <input type="password" id="password" name="password" oninput="check()" placeholder="Password..." required>
-    
-    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password..." required>
-    
-    <div class="remember-me">
-      <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
-      <p class="terms">I agree to the terms and conditions.</p>
-    </div>
-    
-    <div>
-      <button type="submit" class="login-button" onclick="registerUser()">Sign Up</button>
-    </div>
-  </form>
-
   <div class="forgot-password">
     <h1>Already have an account?</h1>
     <a href="updated_login.html">Login.</a>
   </div>
 </div>
-</body>
-
 
 <script>
+    
+    // Toggle password visibility
+    function togglePasswordVisibility(inputId) {
+        var input = document.getElementById(inputId);
+        var eyeIcon = document.getElementById(`see-${inputId}`);
+        
+        if (input.type === "password") {
+            input.type = "text";
+            eyeIcon.classList.remove("fa-eye");
+            eyeIcon.classList.add("fa-eye-slash");
+        } else {
+            input.type = "password";
+            eyeIcon.classList.remove("fa-eye-slash");
+            eyeIcon.classList.add("fa-eye");
+        }
+    }
+    
+    // Validate password criteria
+    function validatePassword() {
+        var password = document.getElementById("password").value;
+        var passwordLength = password.length;
+        
+        // Check for length
+        if (passwordLength < 6 || passwordLength > 14) {
+            alert("Password length should be between 6 and 14 characters.");
+            return false;
+        }
+        
+        // Check for at least one capital letter
+        if (!/[A-Z]/.test(password)) {
+            alert("Password should contain at least one capital letter.");
+            return false;
+        }
+        
+        // Check for special characters and no spaces
+        if (!/^[a-zA-Z0-9*\/]+$/.test(password)) {
+            alert("Password should contain special characters like * or / and no spaces.");
+            return false;
+        }
+        
+        // Check for at least one number
+        if (!/\d/.test(password)) {
+            alert("Password should contain at least one number.");
+            return false;
+        }
+        
+        return true;
+    }
+
+    // Register user and move to login form
     function registerUser() {
         var username = document.getElementById("username").value;
         var email = document.getElementById("email").value;
@@ -197,42 +252,26 @@
             return false;
         }
 
+        if (!validatePassword()) {
+            return false;
+        }
+
         if (!termsAgreement) {
             alert("Please agree to the terms and conditions.");
             return false;
         }
 
-        function validatePassword() {
-            var password = document.getElementById("password").value;
-            var passwordLength = password.length;
-        
-            // Check for length
-            if (passwordLength < 6 || passwordLength > 14) {
-                alert("Password length should be between 6 and 14 characters.");
-                return false;
-            }
-        
-            // Check for at least one capital letter
-            if (!/[A-Z]/.test(password)) {
-                alert("Password should contain at least one capital letter.");
-                return false;
-            }
-        
-            // Check for special characters and no spaces
-            if (!/^[a-zA-Z0-9*\/]+$/.test(password)) {
-                alert("Password should contain special characters like * or / and no spaces.");
-                return false;
-            }
-        
-            // Check for at least one number
-            if (!/\d/.test(password)) {
-                alert("Password should contain at least one number.");
-                return false;
-            }
-        
-            return true;
-        }
+        // You can add further logic here, such as sending the registration data to a server or navigating to another page.
+    }
 
-        window.location.href = "updated_login.html";
+    function redirectToIndex() {
+        var isValid = validatePassword();
+        if (isValid) {
+            window.location.href = "index.html";
+        }
     }
 </script>
+
+</body>
+</html>
+
