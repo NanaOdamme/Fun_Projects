@@ -80,7 +80,7 @@
         margin-right: 10px;
         margin-top: -40px;
         width: auto;
-        transform: scale(1);
+        transform: scale(1.5);
         align-self: center;
         
       }
@@ -89,7 +89,6 @@
         font-weight: bold;
         margin-top: -35px;
         font-size: 12px;
-        color: #5b0f4f;
       }
 
     .login-button{
@@ -142,20 +141,11 @@
         width: 70%;
       }
     }
-    
-    #set{
-        display: block;
-        position: relative;
-        margin: 5px;
-        text-align: left;
-
-    }
 
     #see{
-        display: inline-block;
+       /* display: inline-block;*/
         color: rgb(171, 171, 171);
         float: right;
-        margin-top: -60px;
         margin-right: 4px;
         cursor: pointer;
         transition-duration: .2s;
@@ -173,16 +163,9 @@
     <input type="email" id="email" name="email" placeholder="Email...">
     
     <input type="password" id="password" name="password" oninput="check()" placeholder="Password..." required>
-    <br>
-    <div id="set">
-      <i id="see" onclick="see()" class="fa fa-eye" aria-hidden="true"></i>
-    </div>
     
     <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password..." required>
-    <div id="set">
-        <i id="see" onclick="see()" class="fa fa-eye" aria-hidden="true"></i>
-      </div>
-      
+    
     <div class="remember-me">
       <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
       <p class="terms">I agree to the terms and conditions.</p>
@@ -219,10 +202,37 @@
             return false;
         }
 
-        // You can add further logic here to actually register the user, 
-        // for example, sending data to a server or storing in local storage.
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var passwordLength = password.length;
         
-        // After successful registration, you might want to redirect the user to a confirmation page.
-        window.location.href = "confirmation.html";
+            // Check for length
+            if (passwordLength < 6 || passwordLength > 14) {
+                alert("Password length should be between 6 and 14 characters.");
+                return false;
+            }
+        
+            // Check for at least one capital letter
+            if (!/[A-Z]/.test(password)) {
+                alert("Password should contain at least one capital letter.");
+                return false;
+            }
+        
+            // Check for special characters and no spaces
+            if (!/^[a-zA-Z0-9*\/]+$/.test(password)) {
+                alert("Password should contain special characters like * or / and no spaces.");
+                return false;
+            }
+        
+            // Check for at least one number
+            if (!/\d/.test(password)) {
+                alert("Password should contain at least one number.");
+                return false;
+            }
+        
+            return true;
+        }
+
+        window.location.href = "updated_login.html";
     }
 </script>
