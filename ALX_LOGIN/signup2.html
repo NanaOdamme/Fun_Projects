@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>alx-Login Form clone static</title>
+  <!--icon-->
+  <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <!---fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a1be86b1f7.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #8b3bdbb5, #d611bc54);
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .login-container h1{
+      text-align: center;
+      margin: 10px 0px 15px 0px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 2rem;
+      color: #5b0f4f;
+      font-weight: bold;
+    }
+
+    .login-container {
+      text-align: center;
+      height: 60%;
+      width: 30%; /* Adjust the width as needed */
+      max-width: 400px;
+      background-color: #ffffff;
+      padding: 70px;
+      margin-bottom: 5px;
+      border-radius: 10px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .login-container input {
+
+      padding: 12px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      border-bottom: 2px solid #e73ccd;
+      width: 100%;
+      display: block;
+      margin-top: 20px;
+    }
+
+    input:hover{
+        border-bottom: 2px solid #f6d3ee;
+    }
+    
+    .remember-me {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        
+      }
+      
+      .remember-me input {
+        cursor: pointer;
+        margin-right: 10px;
+        margin-top: -40px;
+        width: auto;
+        transform: scale(1);
+        align-self: center;
+        
+      }
+
+      .remember-me p{
+        font-weight: bold;
+        margin-top: -35px;
+        font-size: 12px;
+        color: #5b0f4f;
+      }
+
+    .login-button{
+      display: inline;
+      background-color: #e450e0;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 45%;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .login-button:hover{
+        background-color: rgb(254, 216, 255);
+        color: #000000;
+
+    }
+
+    .forgot-password {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 20pxpx;
+      cursor: pointer;
+    }
+
+    .forgot-password h1{
+        font-size: 12px;
+        color: #e73ccd;
+        font-weight: lighter;
+        margin-bottom: 2px;
+    }
+
+    .forgot-password a {
+      color: #e73ccd;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .login-container {
+        width: 90%;
+      }
+      
+      .login-button {
+        width: 70%;
+      }
+    }
+    
+    #set{
+        display: block;
+        position: relative;
+        margin: 5px;
+        text-align: left;
+
+    }
+
+    #see{
+        display: inline-block;
+        color: rgb(171, 171, 171);
+        float: right;
+        margin-top: -60px;
+        margin-right: 4px;
+        cursor: pointer;
+        transition-duration: .2s;
+        font-size: 12px;
+    }
+
+  </style>
+</head>
+<body>
+<div class="login-container">
+    <div><h1 class="logo">Sign Up</h1></div>
+  <form>
+    <input type="text" id="username" name="username" placeholder="Username..." required>
+    
+    <input type="email" id="email" name="email" placeholder="Email...">
+    
+    <input type="password" id="password" name="password" oninput="check()" placeholder="Password..." required>
+    <br>
+    <div id="set">
+      <i id="see" onclick="see()" class="fa fa-eye" aria-hidden="true"></i>
+    </div>
+    
+    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password..." required>
+    <div id="set">
+        <i id="see" onclick="see()" class="fa fa-eye" aria-hidden="true"></i>
+      </div>
+      
+    <div class="remember-me">
+      <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
+      <p class="terms">I agree to the terms and conditions.</p>
+    </div>
+    
+    <div>
+      <button type="submit" class="login-button" onclick="registerUser()">Sign Up</button>
+    </div>
+  </form>
+
+  <div class="forgot-password">
+    <h1>Already have an account?</h1>
+    <a href="updated_login.html">Login.</a>
+  </div>
+</div>
+</body>
+
+
+<script>
+    function registerUser() {
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+        var termsAgreement = document.getElementById("termsAgreement").checked;
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+
+        if (!termsAgreement) {
+            alert("Please agree to the terms and conditions.");
+            return false;
+        }
+
+        // You can add further logic here to actually register the user, 
+        // for example, sending data to a server or storing in local storage.
+        
+        // After successful registration, you might want to redirect the user to a confirmation page.
+        window.location.href = "confirmation.html";
+    }
+</script>

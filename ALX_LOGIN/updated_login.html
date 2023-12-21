@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>alx-Login Form clone static</title>
+  <!--icon-->
+  <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <!---fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a1be86b1f7.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #8b3bdbb5, #d611bc54);
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .login-container h1{
+      text-align: center;
+      margin: 10px 0px 15px 0px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 2rem;
+      color: #5b0f4f;
+      font-weight: bold;
+    }
+
+    .login-container {
+      text-align: center;
+      height: 60%;
+      width: 30%; /* Adjust the width as needed */
+      max-width: 400px;
+      background-color: #ffffff;
+      padding: 70px;
+      margin-bottom: 50px;
+      border-radius: 10px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .login-container input {
+
+      padding: 12px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      border-bottom: 2px solid #e73ccd;
+      width: 100%;
+      display: block;
+      margin-top: 50px;
+    }
+
+    input:hover{
+        border-bottom: 2px solid #f6d3ee;
+    }
+    
+    .remember-me {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        
+      }
+      
+      .remember-me input {
+        cursor: pointer;
+        margin-right: 10px;
+        margin-top: -40px;
+        width: auto;
+        transform: scale(1.5);
+        align-self: center;
+        
+      }
+
+      .remember-me p{
+        font-weight: bold;
+        margin-top: -35px;
+      }
+
+    .login-button{
+      display: inline;
+      background-color: #e450e0;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 35%;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .login-button:hover{
+        background-color: rgb(254, 216, 255);
+        color: #000000;
+
+    }
+
+    .forgot-password {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 20pxpx;
+      cursor: pointer;
+    }
+
+    .forgot-password h1{
+        font-size: 12px;
+        color: #e73ccd;
+        font-weight: lighter;
+        margin-bottom: 2px;
+    }
+
+    .forgot-password a {
+      color: #e73ccd;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .login-container {
+        width: 90%;
+      }
+      
+      .login-button {
+        width: 70%;
+      }
+    }
+    
+    #set{
+        display: block;
+        position: relative;
+        margin: 5px;
+        text-align: left;
+
+    }
+
+    #see{
+        display: inline-block;
+        color: rgb(171, 171, 171);
+        float: right;
+        margin-top: -60px;
+        margin-right: 4px;
+        cursor: pointer;
+        transition-duration: .2s;
+        font-size: 12px;
+    }
+
+  </style>
+</head>
+<body>
+  
+<div class="login-container">
+    <div><h1 class="logo">Login</h1></div>
+  <form>
+    <input type="email" id="email" name="email"  placeholder="email...">
+
+    <input type="password" id="password" name="password" oninput="check()" placeholder="Password..." required>
+    <br>
+    <div id="set">
+      <!--<div id="count">Length : 0</div>-->
+      <i id="see" onclick="see()" class="fa fa-eye" aria-hidden="true"></i>
+    </div>
+    
+    <div class="remember-me">
+      <input type="checkbox" id="rememberMe" name="rememberMe">
+      <p class="rememberMe">Remember me</p>
+    </div>
+    <div>
+      <button type="submit" class="login-button" onclick="redirectToIndex()">Log in</button>
+    </div>
+  </form>
+
+  <div class="forgot-password">
+    <h1>Don't have an account?</h1>
+    <a href="signup2.html">Register.</a>
+  </div>
+</div>
+
+<script>
+    function see() {
+      var passwordInput = document.getElementById("password");
+      var eyeIcon = document.getElementById("see");
+  
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        eyeIcon.classList.remove("fa-eye");
+        eyeIcon.classList.add("fa-eye-slash");
+      } else {
+        passwordInput.type = "password";
+        eyeIcon.classList.remove("fa-eye-slash");
+        eyeIcon.classList.add("fa-eye");
+      }
+    }
+  
+    function validatePassword() {
+        var password = document.getElementById("password").value;
+        var passwordLength = password.length;
+    
+        // Check for length
+        if (passwordLength < 6 || passwordLength > 14) {
+            alert("Password length should be between 6 and 14 characters.");
+            return false;
+        }
+    
+        // Check for at least one capital letter
+        if (!/[A-Z]/.test(password)) {
+            alert("Password should contain at least one capital letter.");
+            return false;
+        }
+    
+        // Check for special characters and no spaces
+        if (!/^[a-zA-Z0-9*\/]+$/.test(password)) {
+            alert("Password should contain special characters like * or / and no spaces.");
+            return false;
+        }
+    
+        // Check for at least one number
+        if (!/\d/.test(password)) {
+            alert("Password should contain at least one number.");
+            return false;
+        }
+    
+        return true;
+    }
+    
+    
+    function redirectToIndex() {
+        var isValid = validatePassword();
+        if (isValid) {
+            window.location.href = "index.html";
+        }
+    }
+    
+
+</script>
+</body>
+</html>
