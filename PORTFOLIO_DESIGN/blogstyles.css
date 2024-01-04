@@ -52,6 +52,14 @@ header{
     z-index: 200;
 }
 
+header.shadow{
+    background: var(--bg-color);
+    box-shadow: 0 1px 4px hsl(0 4% 14%);
+    transition: 0.4s;
+}
+header.shadow .logo{
+    color: var(--text-color);
+}
 .nav{
     display: flex;
     align-items: center;
@@ -197,4 +205,87 @@ header{
     border: 2px solid var(--second-color);
 }
 
+.profile-name{
+    font-size: 0.82rem;
+    font-weight: 500;
+}
 
+footer{
+    background: var(--bg-color);
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 30px;
+
+}
+.f-contents{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.f-contents h3{
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+    color: var(--second-color);
+}
+
+.f-contents p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14-x;
+    color: var(--text-color);
+
+}
+
+.social-icons{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 1rem 0 2rem 0;
+}
+
+.social-icons li{
+    margin: 0 3px;
+    padding-bottom: -30px;
+}
+
+.social-icons a{
+    text-decoration: none;
+    color: var(--second-color);
+}
+.social-icons a i{
+    font-size: 1rem;
+}
+
+.social-icons a:hover i{
+    color: #f6eb75;
+    transform: scale(1.3);
+    transition: transform 0.4s ease;
+}
+.footer-bottom{
+    background: var(--text-color);
+    width:auto;
+    padding: 5px 0;
+    text-align: center;
+    color: #fff;
+
+}
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.footer-bottom span{
+    text-transform: capitalize;
+    opacity: .6;
+    font-weight: 200; 
+}

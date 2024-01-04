@@ -13,4 +13,14 @@ $(document).ready(function() {
             .show("1000");
         }
     });
+    //active button
+    $(".filter-items").click(function(){
+      $(this).addClass("active-filter").siblings().removeClass("active-filter");
+    });
+});
+//change header bg on scroll
+let header = document.querySelector("header")
+
+window.addEventListener("scroll", () => {
+    header.classList.toggle("shadow", window.scrollY > 0)
 });
