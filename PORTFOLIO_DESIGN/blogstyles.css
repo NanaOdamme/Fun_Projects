@@ -33,13 +33,13 @@ img{
 }
 
 section{
-    padding: 5rem 0 2rem;
+    padding: 3rem 0 2rem;
     display: grid;
 }
 
 .container{
 max-width: 1068px;
-margin: 5px 18px;
+margin:auto;
 width: 100%;
 
 }
@@ -68,13 +68,14 @@ header{
     color: var(--second-color);
 }
 .services{
-    padding: 10px 14px;
+    padding: 8px 14px;
     text-transform: uppercase;
     font-weight: 500;
-    border-radius: 3px;
+    border-radius: 4px;
     background: var(--second-color);
     color: var(--bg-color);
-    margin-right: -300px;
+    margin-right: -200px;
+    
    
 }
 
@@ -195,3 +196,5 @@ header{
     object-position: center;
     border: 2px solid var(--second-color);
 }
+
+
