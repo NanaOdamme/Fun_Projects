@@ -11,10 +11,10 @@ SNAKE_SIZE = 20
 FPS = 10
 
 # Colors
-BLACK = (0, 0, 0)
-WHITE = (255, 255, 255)
-RED = (255, 0, 0)
-GREEN = (0, 255, 0)
+BROWN = (189, 154, 122)
+DARK_PINK = (231, 84, 128)
+DARK_GOLD = (238, 188, 29)
+MOSS_GREEN = (74, 93, 35)
 
 # Snake class
 class Snake:
@@ -22,7 +22,7 @@ class Snake:
         self.length = 1
         self.positions = [((WIDTH // 2), (HEIGHT // 2))]
         self.direction = random.choice([UP, DOWN, LEFT, RIGHT])
-        self.color = GREEN
+        self.color = MOSS_GREEN
 
     def get_head_position(self):
         return self.positions[0]
@@ -51,7 +51,7 @@ class Snake:
 class Food:
     def __init__(self):
         self.position = (0, 0)
-        self.color = RED
+        self.color = DARK_GOLD
         self.randomize_position()
 
     def randomize_position(self):
@@ -69,9 +69,9 @@ RIGHT = (1, 0)
 
 def draw_grid(surface):
     for x in range(0, WIDTH, GRID_SIZE):
-        pygame.draw.line(surface, WHITE, (x, 0), (x, HEIGHT))
+        pygame.draw.line(surface, DARK_PINK, (x, 0), (x, HEIGHT))
     for y in range(0, HEIGHT, GRID_SIZE):
-        pygame.draw.line(surface, WHITE, (0, y), (WIDTH, y))
+        pygame.draw.line(surface, DARK_PINK, (0, y), (WIDTH, y))
 
 # Main function
 def main():
@@ -80,6 +80,19 @@ def main():
     screen = pygame.display.set_mode((WIDTH, HEIGHT), 0, 32)
     surface = pygame.Surface(screen.get_size())
     surface = surface.convert()
+
+    # Load and resize the intro image
+    intro_image = pygame.image.load('intro_image.jpeg')
+    intro_image = pygame.transform.scale(intro_image, (WIDTH, HEIGHT))
+
+    # Slide the intro image
+    for i in range(WIDTH, -WIDTH, -1):
+        screen.blit(intro_image, (i, 0))
+        pygame.display.flip()
+        pygame.time.wait(5)  # Adjust speed as needed
+
+    # Wait for a few seconds
+    pygame.time.wait(3000)
 
     snake = Snake()
     food = Food()
@@ -107,7 +120,7 @@ def main():
             food.randomize_position()
 
         # Draw everything
-        surface.fill(BLACK)
+        surface.fill(BROWN)
         draw_grid(surface)
         snake.render(surface)
         food.render(surface)
